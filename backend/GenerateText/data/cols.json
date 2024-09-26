@@ -1,0 +1,273 @@
+[
+    {
+      "dataset": "customers",
+      "label": "Customer Information",
+      "description": "This table contains detailed information about the customers who use the travel agency's services. It captures personal details, contact information, and preferences, which help the agency in providing personalized travel experiences.",
+      "properties": [
+        {
+          "name": "customer_id",
+          "description": "Unique identifier for each customer. This is an auto-incrementing integer that serves as the primary key.",
+          "label": "Customer ID",
+          "type": "serial"
+        },
+        {
+          "name": "first_name",
+          "description": "The first name of the customer, used for personalized communication and records.",
+          "label": "First Name",
+          "type": "varchar(255)"
+        },
+        {
+          "name": "last_name",
+          "description": "The last name of the customer, helping to identify and distinguish customers.",
+          "label": "Last Name",
+          "type": "varchar(255)"
+        },
+        {
+          "name": "email",
+          "description": "The primary email address of the customer used for communication, including booking confirmations and promotional offers.",
+          "label": "Email Address",
+          "type": "varchar(255)"
+        },
+        {
+          "name": "phone_number",
+          "description": "The customer's contact number, used for urgent communications and verification purposes.",
+          "label": "Phone Number",
+          "type": "varchar(20)"
+        },
+        {
+          "name": "date_of_birth",
+          "description": "The date of birth of the customer, useful for providing age-specific offers and travel insurance.",
+          "label": "Date of Birth",
+          "type": "date"
+        },
+        {
+          "name": "preferences",
+          "description": "Customer's travel preferences such as preferred destinations, travel class, and special requirements, aiding in personalized service delivery.",
+          "label": "Travel Preferences",
+          "type": "jsonb"
+        },
+        {
+          "name": "created_at",
+          "description": "Timestamp indicating when the customer record was created.",
+          "label": "Record Created At",
+          "type": "timestamp"
+        },
+        {
+          "name": "updated_at",
+          "description": "Timestamp indicating the last update to the customer record.",
+          "label": "Record Updated At",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "dataset": "bookings",
+      "label": "Booking Information",
+      "description": "This table stores information related to travel bookings made by customers. It captures details about the trip, payment status, and the services included in the booking.",
+      "properties": [
+        {
+          "name": "booking_id",
+          "description": "Unique identifier for each booking. This is an auto-incrementing integer that serves as the primary key.",
+          "label": "Booking ID",
+          "type": "serial"
+        },
+        {
+          "name": "customer_id",
+          "description": "The identifier linking the booking to a specific customer, allowing the agency to track who made the booking.",
+          "label": "Customer ID",
+          "type": "integer"
+        },
+        {
+          "name": "trip_details",
+          "description": "Information about the trip, including destination, travel dates, and any special services requested. Stored in JSON format to accommodate complex data.",
+          "label": "Trip Details",
+          "type": "jsonb"
+        },
+        {
+          "name": "total_amount",
+          "description": "The total amount charged for the booking, including taxes and fees.",
+          "label": "Total Amount",
+          "type": "numeric(10, 2)"
+        },
+        {
+          "name": "payment_status",
+          "description": "The status of the payment for the booking, indicating whether it is pending, completed, or failed.",
+          "label": "Payment Status",
+          "type": "varchar(50)"
+        },
+        {
+          "name": "created_at",
+          "description": "Timestamp indicating when the booking was created.",
+          "label": "Booking Created At",
+          "type": "timestamp"
+        },
+        {
+          "name": "updated_at",
+          "description": "Timestamp indicating the last update to the booking record.",
+          "label": "Booking Updated At",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "dataset": "destinations",
+      "label": "Destination Information",
+      "description": "This table contains information about travel destinations offered by the agency. It includes details about the location, popular attractions, and seasonal considerations.",
+      "properties": [
+        {
+          "name": "destination_id",
+          "description": "Unique identifier for each destination. This is an auto-incrementing integer that serves as the primary key.",
+          "label": "Destination ID",
+          "type": "serial"
+        },
+        {
+          "name": "name",
+          "description": "The name of the travel destination, used to identify and categorize the location.",
+          "label": "Destination Name",
+          "type": "varchar(255)"
+        },
+        {
+          "name": "country",
+          "description": "The country where the destination is located.",
+          "label": "Country",
+          "type": "varchar(255)"
+        },
+        {
+          "name": "description",
+          "description": "A detailed description of the destination, including cultural, historical, and geographical information.",
+          "label": "Destination Description",
+          "type": "text"
+        },
+        {
+          "name": "best_season",
+          "description": "The best season or time of year to visit this destination, helping customers plan their trips.",
+          "label": "Best Season",
+          "type": "varchar(50)"
+        },
+        {
+          "name": "attractions",
+          "description": "Key attractions and activities available at the destination, listed in JSON format to accommodate a variety of experiences.",
+          "label": "Attractions",
+          "type": "jsonb"
+        },
+        {
+          "name": "created_at",
+          "description": "Timestamp indicating when the destination record was created.",
+          "label": "Record Created At",
+          "type": "timestamp"
+        },
+        {
+          "name": "updated_at",
+          "description": "Timestamp indicating the last update to the destination record.",
+          "label": "Record Updated At",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "dataset": "payments",
+      "label": "Payment Information",
+      "description": "This table tracks payment transactions related to customer bookings. It includes details on payment methods, transaction dates, and payment amounts.",
+      "properties": [
+        {
+          "name": "payment_id",
+          "description": "Unique identifier for each payment transaction. This is an auto-incrementing integer that serves as the primary key.",
+          "label": "Payment ID",
+          "type": "serial"
+        },
+        {
+          "name": "booking_id",
+          "description": "The identifier linking the payment to a specific booking.",
+          "label": "Booking ID",
+          "type": "integer"
+        },
+        {
+          "name": "amount",
+          "description": "The amount paid in the transaction.",
+          "label": "Payment Amount",
+          "type": "numeric(10, 2)"
+        },
+        {
+          "name": "payment_method",
+          "description": "The method used for payment, such as credit card, PayPal, or bank transfer.",
+          "label": "Payment Method",
+          "type": "varchar(50)"
+        },
+        {
+          "name": "transaction_date",
+          "description": "The date and time when the payment transaction occurred.",
+          "label": "Transaction Date",
+          "type": "timestamp"
+        },
+        {
+          "name": "status",
+          "description": "The current status of the payment, such as completed, pending, or failed.",
+          "label": "Payment Status",
+          "type": "varchar(50)"
+        },
+        {
+          "name": "created_at",
+          "description": "Timestamp indicating when the payment record was created.",
+          "label": "Record Created At",
+          "type": "timestamp"
+        },
+        {
+          "name": "updated_at",
+          "description": "Timestamp indicating the last update to the payment record.",
+          "label": "Record Updated At",
+          "type": "timestamp"
+        }
+      ]
+    },
+    {
+      "dataset": "reviews",
+      "label": "Customer Reviews",
+      "description": "This table contains reviews and ratings provided by customers for various destinations and services offered by the travel agency.",
+      "properties": [
+        {
+          "name": "review_id",
+          "description": "Unique identifier for each review. This is an auto-incrementing integer that serves as the primary key.",
+          "label": "Review ID",
+          "type": "serial"
+        },
+        {
+          "name": "customer_id",
+          "description": "The identifier linking the review to a specific customer.",
+          "label": "Customer ID",
+          "type": "integer"
+        },
+        {
+          "name": "destination_id",
+          "description": "The identifier linking the review to a specific destination.",
+          "label": "Destination ID",
+          "type": "integer"
+        },
+        {
+          "name": "rating",
+          "description": "The rating given by the customer, typically on a scale of 1 to 5.",
+          "label": "Rating",
+          "type": "integer"
+        },
+        {
+            "name": "comment",
+            "description": "The text of the review or feedback provided by the customer.",
+            "label": "Review Comment",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "description": "Timestamp indicating when the review was created.",
+            "label": "Review Created At",
+            "type": "timestamp"
+          },
+          {
+            "name": "updated_at",
+            "description": "Timestamp indicating the last update to the review record.",
+            "label": "Review Updated At",
+            "type": "timestamp"
+          }
+        ]
+      }
+    ]
+    
+  
