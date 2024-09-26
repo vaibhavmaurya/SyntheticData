@@ -1,0 +1,265 @@
+[
+    {
+      "id": "CustomerManagement",
+      "text": "Customer Management",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "CustomerInformation",
+          "text": "Customer Information",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "CustomerInformation",
+              "text": "Customer Information",
+              "expanded": false,
+              "isleaf": false,
+              "datasets": [
+                {
+                  "name": "customers",
+                  "label": "Customer Information",
+                  "isleaf": true,
+                  "description": "Contains detailed information about the customers who use the travel agency's services."
+                }
+              ]
+            },
+            {
+              "id": "LoyaltyPrograms",
+              "text": "Loyalty Programs",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "loyalty_programs",
+                  "label": "Loyalty Programs",
+                  "isleaf": true,
+                  "description": "Stores information about the loyalty programs offered by the travel agency."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BookingManagement",
+      "text": "Booking Management",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "BookingInformation",
+          "text": "Booking Information",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "BookingInformation",
+              "text": "Booking Information",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "bookings",
+                  "label": "Booking Information",
+                  "isleaf": true,
+                  "description": "Stores information related to travel bookings made by customers."
+                },
+                {
+                  "name": "itineraries",
+                  "label": "Travel Itineraries",
+                  "isleaf": true,
+                  "description": "Contains detailed itineraries created for customers."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ServiceManagement",
+      "text": "Service Management",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "TravelServices",
+          "text": "Travel Services",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "TravelServices",
+              "text": "Travel Services",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "services",
+                  "label": "Travel Services",
+                  "isleaf": true,
+                  "description": "Contains detailed information about the various services offered by the travel agency."
+                }
+              ]
+            },
+            {
+              "id": "SuppliersInformation",
+              "text": "Suppliers Information",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                    {
+                      "name": "suppliers",
+                      "label": "Suppliers Information",
+                      "isleaf": true,
+                      "description": "Holds information about the suppliers and partners the travel agency works with, such as hotels, airlines, and car rental companies."
+                    }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FinancialManagement",
+      "text": "Financial Management",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "PaymentsAndTransactions",
+          "text": "Payments and Transactions",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "PaymentInformation",
+              "text": "Payment Information",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "payments",
+                  "label": "Payment Information",
+                  "isleaf": true,
+                  "description": "Tracks payment transactions related to customer bookings."
+                },
+                {
+                  "name": "transactions",
+                  "label": "Financial Transactions",
+                  "isleaf": true,
+                  "description": "Records all financial transactions conducted by the travel agency, including customer payments, refunds, and supplier payments."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MarketingAndPromotions",
+      "text": "Marketing and Promotions",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "PromotionsAndCoupons",
+          "text": "Promotions and Coupons",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "PromotionalCampaigns",
+              "text": "Promotional Campaigns",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "promotions",
+                  "label": "Promotional Campaigns",
+                  "isleaf": true,
+                  "description": "Stores information about promotional campaigns run by the travel agency."
+                }
+              ]
+            },
+            {
+              "id": "DiscountCoupons",
+              "text": "Discount Coupons",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "coupons",
+                  "label": "Discount Coupons",
+                  "isleaf": true,
+                  "description": "Contains information about discount coupons offered by the travel agency."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CustomerFeedbackAndReviews",
+      "text": "Customer Feedback and Reviews",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "FeedbackAndReviews",
+          "text": "Feedback and Reviews",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "id": "CustomerReviews",
+              "text": "Customer Reviews",
+              "expanded": false,
+              "isleaf": false,
+              "nodes": [
+                {
+                  "name": "reviews",
+                  "label": "Customer Reviews",
+                  "isleaf": true,
+                  "description": "Contains reviews and ratings provided by customers for various destinations and services offered by the travel agency."
+                },
+                {
+                  "name": "feedback",
+                  "label": "Customer Feedback",
+                  "isleaf": true,
+                  "description": "Collects and stores general feedback provided by customers regarding their overall experience with the travel agency."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RiskManagement",
+      "text": "Risk Management",
+      "expanded": false,
+      "isleaf": false,
+      "nodes": [
+        {
+          "id": "InsurancePolicies",
+          "text": "Insurance Policies",
+          "expanded": false,
+          "isleaf": false,
+          "nodes": [
+            {
+              "name": "insurance_policies",
+              "label": "Travel Insurance Policies",
+              "isleaf": true,
+              "description": "Stores details about travel insurance policies offered to customers."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

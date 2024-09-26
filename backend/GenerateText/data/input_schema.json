@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title":"Synthetic Data Generation",
+    "description": "JSON Schema for the input for the API",
+    "type": "object",
+    "properties": {
+      "llm_prompt_config": {
+        "type": "object",
+        "properties": {
+          "gen_model_config": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "model": { "type": "string" },
+              "region": { "type": "string" }
+            },
+            "required": ["type", "model", "region"]
+          },
+          "prompts": {
+            "type": "object",
+            "properties": {
+              "SYNTHETIC_DATA_GEN": {
+                "type": "object",
+                "properties": {
+                  "role": { "type": "string" },
+                  "context": { "type": "string" },
+                  "instructions": { "type": "string" },
+                  "full_prompt": { "type": "string" },
+                  "format": { "type": "string" },
+                  "gen_item_count": { "type": "integer" }
+                },
+                "required": ["full_prompt", "format", "gen_item_count"]
+              }
+            },
+            "required": ["SYNTHETIC_DATA_GEN"]
+          }
+        },
+        "required": ["gen_model_config", "prompts"]
+      },
+      "llm_tuning_parameters": {
+        "type": "object",
+        "properties": {
+          "max_tokens": { "type": "integer" },
+          "temperature": { "type": "number" },
+          "top_p": { "type": "number" },
+          "top_k": { "type": "integer" }
+        },
+        "required": ["max_tokens", "temperature", "top_p", "top_k"]
+      },
+      "dataset": {
+        "type": "object",
+        "properties": {
+          "dataset": { "type": "string" },
+          "label": { "type": "string" },
+          "description": { "type": "string" },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "label": { "type": "string" },
+                "type": { "type": "string" }
+              },
+              "required": ["name", "description", "label", "type"]
+            }
+          }
+        },
+        "required": ["dataset", "label", "description", "properties"]
+      }
+    },
+    "required": ["llm_prompt_config", "llm_tuning_parameters", "dataset"]
+  }
+  
